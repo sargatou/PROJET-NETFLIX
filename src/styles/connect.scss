@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url(https://www.numerama.com/wp-content/uploads/2017/05/netflix.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  overflow-y: hidden;
+  font-family: "Open Sans", sans-serif;
+}
+.content {
+  display: flex;
+  justify-content: center;
+}
+nav {
+  img {
+    width: 100px;
+  }
+}
+nav {
+  background-color: transparent;
+  height: 100px;
+}
+form {
+  background-color: rgba(0, 0, 0, 0.75);
+  width: 350px;
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+
+  padding: 20px;
+  color: white;
+  margin: auto;
+}
+input {
+  padding: 16px 20px;
+  outline: none;
+  margin: 5px 0;
+  background-color: #333;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 4px;
+  opacity: 0.8;
+}
+p {
+  color: #737373;
+}
+label {
+  color: white;
+  margin-left: 10px;
+}
+a {
+  color: aliceblue;
+  text-decoration: none;
+  margin-left: 6px;
+}
+a:hover {
+  border-bottom: 2px solid white;
+}
+
+input[type="submit"] {
+  background-color: rgb(204, 7, 7);
+  text-transform: uppercase;
+}
+input[type="submit"]:hover {
+  background-color: red;
+  cursor: pointer;
+}
+input[type="email"]:focus,
+input[type="password"]:focus {
+  opacity: 1;
+}
+input[type="email"]:hover,
+input[type="password"]:hover {
+  opacity: 1;
+}

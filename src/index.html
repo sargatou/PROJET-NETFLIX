@@ -4,11 +4,39 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="img/nficon2016.ico" type="image/png" />
-    <link rel="stylesheet" href="styles/style.scss" />
     <title>NETFLIX</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/png" href="img/nficon2016.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/style.scss" />
   </head>
   <body>
-    <h1>maman</h1>
+    <nav>
+      <img src="img/Netflix_Logo_RGB.png" alt="logo-netflix" />
+    </nav>
+
+    <div class="content">
+      <form action="profil.html">
+        <h2>S'identifier</h2>
+        <input type="email" placeholder="Entrez votre email" required />
+        <input
+          type="password"
+          placeholder="Entrez votre mot de passe"
+          required
+        />
+        <input type="submit" value="connexion" />
+
+        <p>
+          <input type="checkbox" id="save" />
+          <label for="save">se souvenir de moi</label>
+        </p>
+
+        <p>Première visite sur netflix <a href="#"> inscrivez-vous</a></p>
+      </form>
+    </div>
   </body>
 </html>
