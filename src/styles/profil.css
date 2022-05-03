@@ -61,6 +61,11 @@ a:hover {
 }
 .navbar__logo:hover {
   border: none;
+  transition: none;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  -o-transition: none;
 }
 
 a {
