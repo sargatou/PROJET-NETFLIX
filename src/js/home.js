@@ -1,5 +1,5 @@
 // api key  from TMDB
-const api = "api_key=9c01bc51e3095c9d889d05989bec36d1";
+const api = "api_key=a4880995fbb07d40249df7d0c03c8383";
 // base url of the site
 const base_url = "https://api.themoviedb.org/3";
 // url
@@ -25,21 +25,30 @@ function truncate(str, n) {
 // banner0
 fetch(requests.fetchNetflixOrignals)
   .then((res) => res.json())
-  .then((data) => {
-    console.log(data.results);
-    // every refresh the movie will be change
-    const setMovie =
-      data.results[Math.floor(Math.random() * data.results.length - 1)];
-    console.log(setMovie);
-    var banner = document.getElementById("banner");
-    var banner_title = document.getElementById("banner__title");
-    var banner__desc = document.getElementById("banner__description");
-    banner.style.backgroundImage =
-      "url(" + img_url + setMovie.backdrop_path + ")";
-    banner__desc.innerText = truncate(setMovie.overview, 150);
-    banner_title.innerText = setMovie.name;
-  });
+  .then((data) =>
+    affichebanner(
+      data.results[Math.floor(Math.random() * data.results.length - 1)]
+    )
+  );
 
+function affichebanner(movie) {
+  /* console.log(data.results); */
+  // every refresh the movie will be change
+  const setMovie = movie;
+
+  console.log(setMovie);
+  var banner = document.getElementById("banner");
+  var banner_title = document.getElementById("banner__title");
+  var banner__desc = document.getElementById("banner__description");
+  /*  banner_title.innerHTML = "";
+  banner__desc.innerHTML = ""; */
+
+  banner.style.backgroundImage =
+    "url(" + img_url + setMovie.backdrop_path + ")";
+  banner__desc.innerText = truncate(setMovie.overview, 150);
+  banner_title.innerText = setMovie.name || setMovie.title;
+  window.scrollTo(0, 0);
+}
 // movies rows
 fetch(requests.fetchNetflixOrignals)
   .then((res) => res.json())
@@ -62,6 +71,9 @@ fetch(requests.fetchNetflixOrignals)
       var s = movie.name.replace(/\s+/g, "");
       poster.id = s;
       poster.src = img_url + movie.poster_path;
+      poster.addEventListener("click", function () {
+        affichebanner(movie);
+      });
       row_posters.appendChild(poster);
     });
   });
@@ -88,6 +100,9 @@ fetch(requests.fetchPopular)
       var s2 = movie.id;
       poster.id = s2;
       poster.src = img_url + movie.poster_path;
+      poster.addEventListener("click", function () {
+        affichebanner(movie);
+      });
       row_posters.appendChild(poster);
     });
   });
@@ -114,6 +129,9 @@ fetch(requests.fetchTrending)
       var s2 = movie.id;
       poster.id = s2;
       poster.src = img_url + movie.poster_path;
+      poster.addEventListener("click", function () {
+        affichebanner(movie);
+      });
       row_posters.appendChild(poster);
     });
   });
@@ -140,6 +158,9 @@ fetch(requests.fetchActionMovies)
       var s2 = movie.id;
       poster.id = s2;
       poster.src = img_url + movie.backdrop_path;
+      poster.addEventListener("click", function () {
+        affichebanner(movie);
+      });
       row_posters.appendChild(poster);
     });
   });
@@ -165,6 +186,9 @@ fetch(requests.fetchComedyMovies)
       var s2 = movie.id;
       poster.id = s2;
       poster.src = img_url + movie.backdrop_path;
+      poster.addEventListener("click", function () {
+        affichebanner(movie);
+      });
       row_posters.appendChild(poster);
     });
   });
@@ -190,6 +214,9 @@ fetch(requests.fetchHorrorMovies)
       var s2 = movie.id;
       poster.id = s2;
       poster.src = img_url + movie.backdrop_path;
+      poster.addEventListener("click", function () {
+        affichebanner(movie);
+      });
       row_posters.appendChild(poster);
     });
   });
@@ -215,6 +242,9 @@ fetch(requests.fetchRomanceMovies)
       var s2 = movie.id;
       poster.id = s2;
       poster.src = img_url + movie.backdrop_path;
+      poster.addEventListener("click", function () {
+        affichebanner(movie);
+      });
       row_posters.appendChild(poster);
     });
   });
@@ -240,6 +270,9 @@ fetch(requests.fetchDocumentaries)
       var s2 = movie.id;
       poster.id = s2;
       poster.src = img_url + movie.backdrop_path;
+      poster.addEventListener("click", function () {
+        affichebanner(movie);
+      });
       row_posters.appendChild(poster);
     });
   });
