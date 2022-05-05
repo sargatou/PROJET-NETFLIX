@@ -8,14 +8,14 @@ let final_url =
 let img_url = "https://image.tmdb.org/t/p/original";
 
 let requests = {
-  popular: `${base_url}/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.description&${api}`,
-  trending: `${base_url}/trending/all/week?${api}&language=en-US`,
-  NetflixOrignals: `${base_url}/discover/tv?${api}&with_networks=213`,
-  ActionMovies: `${base_url}/discover/movie?${api}&with_genres=28`,
-  ComedyMovies: `${base_url}/discover/movie?${api}&with_genres=35`,
-  HorrorMovies: `${base_url}/discover/movie?${api}&with_genres=27`,
-  RomanceMovies: `${base_url}/discover/movie?${api}&with_genres=35`,
-  Documentaries: `${base_url}/discover/movie?${api}&with_genres=27`,
+  fetchpopular: `${base_url}/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.description&${api}`,
+  fetchtrending: `${base_url}/trending/all/week?${api}&language=en-US`,
+  fetchNetflixOrignals: `${base_url}/discover/tv?${api}&with_networks=213`,
+  fetchActionMovies: `${base_url}/discover/movie?${api}&with_genres=28`,
+  fetchComedyMovies: `${base_url}/discover/movie?${api}&with_genres=35`,
+  fetchHorrorMovies: `${base_url}/discover/movie?${api}&with_genres=27`,
+  fetchRomanceMovies: `${base_url}/discover/movie?${api}&with_genres=35`,
+  fetchDocumentaries: `${base_url}/discover/movie?${api}&with_genres=27`,
 };
 
 fetch(requests.fetchNetflixOrignals)
@@ -27,35 +27,35 @@ fetch(requests.fetchNetflixOrignals)
   );
 
 function truncate(str, n) {
-  fetch(requests.fetchDocumentaries)
-    .then((res) => res.json())
-    .then((data) => {
-      let lines = document.getElementById("lines");
-      let line = document.createElement("div");
-      line.className = "line";
-      lines.appendChild(line);
-      let title = document.createElement("h2");
-      title.className = "line__title";
-      title.innerText = "Documentaries";
-      line.appendChild(title);
-      let line_posters = document.createElement("div");
-      line_posters.className = "line__posters";
-      line.appendChild(line_posters);
-      data.results.forEach((movie) => {
-        console.log(movie);
-        let poster = document.createElement("img");
-        poster.className = "line__poster";
-        var stock = movie.id;
-        poster.id = stock;
-        poster.src = img_url + movie.backdrop_path;
-        poster.addEventListener("click", function () {
-          affichescreen(movie);
-        });
-        line_posters.appendChild(poster);
-      });
-    });
   return str?.length > n ? str.substr(0, n - 1) + "..." : str;
 }
+fetch(requests.fetchDocumentaries)
+  .then((res) => res.json())
+  .then((data) => {
+    let lines = document.getElementById("lines");
+    let line = document.createElement("div");
+    line.className = "line";
+    lines.appendChild(line);
+    let title = document.createElement("h2");
+    title.className = "line__title";
+    title.innerText = "Documentaries";
+    line.appendChild(title);
+    let line_posters = document.createElement("div");
+    line_posters.className = "line__posters";
+    line.appendChild(line_posters);
+    data.results.forEach((movie) => {
+      console.log(movie);
+      let poster = document.createElement("img");
+      poster.className = "line__poster";
+      var stock = movie.id;
+      poster.id = stock;
+      poster.src = img_url + movie.backdrop_path;
+      poster.addEventListener("click", function () {
+        affichescreen(movie);
+      });
+      line_posters.appendChild(poster);
+    });
+  });
 function affichescreen(movie) {
   let setMovie = movie;
   console.log(setMovie);
@@ -99,7 +99,7 @@ fetch(requests.NetflixOrignals)
     });
   });
 
-fetch(requests.popular)
+fetch(requests.fetchpopular)
   .then((res) => res.json())
   .then((data) => {
     let lines = document.getElementById("lines");
@@ -127,7 +127,7 @@ fetch(requests.popular)
     });
   });
 
-fetch(requests.trending)
+fetch(requests.fecthtrending)
   .then((res) => res.json())
   .then((data) => {
     let lines = document.getElementById("lines");
