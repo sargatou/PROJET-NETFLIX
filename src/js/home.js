@@ -35,17 +35,16 @@ function affichebanner(movie) {
   /* console.log(data.results); */
   // every refresh the movie will be change
   const setMovie = movie;
-
   console.log(setMovie);
   var banner = document.getElementById("banner");
   var banner_title = document.getElementById("banner__title");
   var banner__desc = document.getElementById("banner__description");
   /*  banner_title.innerHTML = "";
   banner__desc.innerHTML = ""; */
-
   banner.style.backgroundImage =
     "url(" + img_url + setMovie.backdrop_path + ")";
   banner__desc.innerText = truncate(setMovie.overview, 150);
+
   banner_title.innerText = setMovie.name || setMovie.title;
   window.scrollTo(0, 0);
 }
@@ -97,8 +96,8 @@ fetch(requests.fetchPopular)
     data.results.forEach((movie) => {
       const poster = document.createElement("img");
       poster.className = "row__posterLarge";
-      var s2 = movie.id;
-      poster.id = s2;
+      var stock = movie.id;
+      poster.id = stock;
       poster.src = img_url + movie.poster_path;
       poster.addEventListener("click", function () {
         affichebanner(movie);
@@ -126,8 +125,8 @@ fetch(requests.fetchTrending)
       console.log(movie);
       const poster = document.createElement("img");
       poster.className = "row__posterLarge";
-      var s2 = movie.id;
-      poster.id = s2;
+      var stock = movie.id;
+      poster.id = stock;
       poster.src = img_url + movie.poster_path;
       poster.addEventListener("click", function () {
         affichebanner(movie);
@@ -155,8 +154,8 @@ fetch(requests.fetchActionMovies)
       console.log(movie);
       const poster = document.createElement("img");
       poster.className = "row__poster";
-      var s2 = movie.id;
-      poster.id = s2;
+      var stock = movie.id;
+      poster.id = stock;
       poster.src = img_url + movie.backdrop_path;
       poster.addEventListener("click", function () {
         affichebanner(movie);
@@ -183,8 +182,8 @@ fetch(requests.fetchComedyMovies)
       console.log(movie);
       const poster = document.createElement("img");
       poster.className = "row__poster";
-      var s2 = movie.id;
-      poster.id = s2;
+      var stock = movie.id;
+      poster.id = stock;
       poster.src = img_url + movie.backdrop_path;
       poster.addEventListener("click", function () {
         affichebanner(movie);
@@ -211,8 +210,8 @@ fetch(requests.fetchHorrorMovies)
       console.log(movie);
       const poster = document.createElement("img");
       poster.className = "row__poster";
-      var s2 = movie.id;
-      poster.id = s2;
+      var stock = movie.id;
+      poster.id = stock;
       poster.src = img_url + movie.backdrop_path;
       poster.addEventListener("click", function () {
         affichebanner(movie);
@@ -239,8 +238,8 @@ fetch(requests.fetchRomanceMovies)
       console.log(movie);
       const poster = document.createElement("img");
       poster.className = "row__poster";
-      var s2 = movie.id;
-      poster.id = s2;
+      var stock = movie.id;
+      poster.id = stock;
       poster.src = img_url + movie.backdrop_path;
       poster.addEventListener("click", function () {
         affichebanner(movie);
@@ -267,8 +266,8 @@ fetch(requests.fetchDocumentaries)
       console.log(movie);
       const poster = document.createElement("img");
       poster.className = "row__poster";
-      var s2 = movie.id;
-      poster.id = s2;
+      var stock = movie.id;
+      poster.id = stock;
       poster.src = img_url + movie.backdrop_path;
       poster.addEventListener("click", function () {
         affichebanner(movie);
