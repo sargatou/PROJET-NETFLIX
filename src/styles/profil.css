@@ -33,6 +33,10 @@ h1 {
 .profils__profil {
   margin-left: 10px;
 }
+.profils__profil,
+img {
+  border-radius: 19px;
+}
 
 img {
   border: 2px solid transparent;
