@@ -86,7 +86,11 @@ body {
   background-color: #e6e6e6;
   transition: all 0.3s;
 }
+<<<<<<< HEAD
 #screen__degraded {
+=======
+#screen__fadeBottom {
+>>>>>>> 7b9be0abe9d8eed0ba8c238a7956e9a650e87335
   height: 7.4rem;
   background: linear-gradient(
     180deg,
@@ -112,6 +116,7 @@ body {
 .line__posters::-webkit-scrollbar {
   display: none;
 }
+<<<<<<< HEAD
 .line__posterLarge:hover,
 .line__posterLarge1:hover,
 .line__posterLarge2:hover {
@@ -122,6 +127,8 @@ body {
   -ms-transform: scale(1.09);
   -o-transform: scale(1.09);
 }
+=======
+>>>>>>> 7b9be0abe9d8eed0ba8c238a7956e9a650e87335
 .line__posters {
   display: flex;
   overflow-y: hidden;
@@ -144,3 +151,12 @@ body {
   margin-right: 10px;
   transition: transform 500ms;
 }
+<<<<<<< HEAD
+=======
+.line__posterLarge:hover,
+.line__posterLarge1:hover,
+.line__posterLarge2:hover {
+  transform: scale(1.09);
+  opacity: 1;
+}
+>>>>>>> 7b9be0abe9d8eed0ba8c238a7956e9a650e87335

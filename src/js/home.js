@@ -27,35 +27,35 @@ fetch(requests.fetchNetflixOrignals)
   );
 
 function truncate(str, n) {
+  fetch(requests.fetchDocumentaries)
+    .then((res) => res.json())
+    .then((data) => {
+      let lines = document.getElementById("lines");
+      let line = document.createElement("div");
+      line.className = "line";
+      lines.appendChild(line);
+      let title = document.createElement("h2");
+      title.className = "line__title";
+      title.innerText = "Documentaries";
+      line.appendChild(title);
+      let line_posters = document.createElement("div");
+      line_posters.className = "line__posters";
+      line.appendChild(line_posters);
+      data.results.forEach((movie) => {
+        console.log(movie);
+        let poster = document.createElement("img");
+        poster.className = "line__poster";
+        var stock = movie.id;
+        poster.id = stock;
+        poster.src = img_url + movie.backdrop_path;
+        poster.addEventListener("click", function () {
+          affichescreen(movie);
+        });
+        line_posters.appendChild(poster);
+      });
+    });
   return str?.length > n ? str.substr(0, n - 1) + "..." : str;
 }
-fetch(requests.fetchDocumentaries)
-  .then((res) => res.json())
-  .then((data) => {
-    let lines = document.getElementById("lines");
-    let line = document.createElement("div");
-    line.className = "line";
-    lines.appendChild(line);
-    let title = document.createElement("h2");
-    title.className = "line__title";
-    title.innerText = "Documentaries";
-    line.appendChild(title);
-    let line_posters = document.createElement("div");
-    line_posters.className = "line__posters";
-    line.appendChild(line_posters);
-    data.results.forEach((movie) => {
-      console.log(movie);
-      let poster = document.createElement("img");
-      poster.className = "line__poster";
-      var stock = movie.id;
-      poster.id = stock;
-      poster.src = img_url + movie.backdrop_path;
-      poster.addEventListener("click", function () {
-        affichescreen(movie);
-      });
-      line_posters.appendChild(poster);
-    });
-  });
 function affichescreen(movie) {
   let setMovie = movie;
   console.log(setMovie);
