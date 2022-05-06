@@ -1,11 +1,9 @@
 let api = "api_key=a4880995fbb07d40249df7d0c03c8383";
-
 let base_url = "https://api.themoviedb.org/3";
-
 let final_url =
   base_url + "/discover/movie?sort_by=popularity.description&" + api;
-
 let img_url = "https://image.tmdb.org/t/p/original";
+let container = document.querySelector(".lines");
 
 let requests = {
   fetchpopular: `${base_url}/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.description&${api}`,

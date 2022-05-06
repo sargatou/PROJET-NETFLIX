@@ -140,3 +140,12 @@ body {
   margin-right: 10px;
   transition: transform 500ms;
 }
+.movie_container {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+}
