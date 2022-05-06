@@ -2,7 +2,7 @@ body {
   margin: 0;
   font-family: "Open Sans", sans-serif;
   background-color: #141414;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
   position: relative;
 }
 
@@ -24,6 +24,19 @@ h1 {
   margin: 0 10%;
   margin-top: 10px;
   margin-bottom: 20px;
+  overflow-y: scroll;
+}
+::-webkit-scrollbar {
+  width: 7px;
+  background-color: #111;
+}
+::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
 }
 .profils {
   display: flex;
