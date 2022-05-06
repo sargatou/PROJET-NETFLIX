@@ -36,7 +36,7 @@ body {
 .nav__left {
   margin-left: 10px;
 }
-.nav_logo {
+.nav__logo {
   width: 120px;
 }
 
@@ -86,7 +86,7 @@ body {
   background-color: #e6e6e6;
   transition: all 0.3s;
 }
-#screen__fadeBottom {
+#screen__degraded {
   height: 7.4rem;
   background: linear-gradient(
     180deg,
@@ -112,6 +112,16 @@ body {
 .line__posters::-webkit-scrollbar {
   display: none;
 }
+.line__posterLarge:hover,
+.line__posterLarge1:hover,
+.line__posterLarge2:hover {
+  transform: scale(1.09);
+  opacity: 1;
+  -webkit-transform: scale(1.09);
+  -moz-transform: scale(1.09);
+  -ms-transform: scale(1.09);
+  -o-transform: scale(1.09);
+}
 .line__posters {
   display: flex;
   overflow-y: hidden;
@@ -129,10 +139,4 @@ body {
   max-height: 250px;
   margin-right: 10px;
   transition: transform 500ms;
-}
-.line__posterLarge:hover,
-.line__posterLarge1:hover,
-.line__posterLarge2:hover {
-  transform: scale(1.09);
-  opacity: 1;
 }
